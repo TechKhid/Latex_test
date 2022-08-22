@@ -1,0 +1,225 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amstext}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\author{Priscilla Yaa Nyarkoa Oppong}
+\date{}
+\title{%
+    Math446 Module Theory\\
+    Assignment 1\\
+    10714647}
+
+
+\begin{document}
+\maketitle
+\noindent\ 
+1. Let \emph{R} be a commutative unitary ring and let M be and R-module. Let $ r\in\emph{R}$
+be fixed and let 
+
+
+\[r\emph{M} = \{rx:x\in\emph{M}\}\ \ \textrm{and}\ \ \emph{M}r =\{x\in\emph{M}:rx = 0\}\]
+
+(a) We want to show that  $r\emph{M}$ and $\emph{M}r$ are submodules of $\emph{M}$.
+Considering r\emph{M}, since $\emph{M}$ is module, we know that $0\in\emph{M}$ and so 
+for our fixed \emph{r}, we know that, $0 = \emph{r}0$ 
+for $0\in\emph{M}$ and so  $0\in\emph{rM}$, hence  $\emph{rM}\ne\emptyset$\\
+Now since $\emph{M}$ is an \emph{R}-module, we know that $\forall{x}\in\emph{M}$ and 
+$\forall{r}\in\emph{M}$, $\emph{rx}\in\emph{M}$ and so by definition, $\emph{rM} \subseteq\emph{M}$. 
+\\Choose $a, b\in\emph{rM}$ then $\exists{x}_1, x_2\in\emph{M}$ such that $a = rx_1, b = rx_2$.
+Now choose some $s\in\emph{R}$. 
+We want to show that $a + sb\in\emph{rM}$ \\
+
+$$a+sb = rx_1 + s(rx_2) = rx_1 + (sr)x_2 = rx_1 + (rs)x_2 = rx_1 + r(sx_2)=\\
+r(x_1 + sx_2)$$
+We know that $x_1 + sx_2\in\emph{M}$ since $\emph{M}$ is a module and so 
+$r(x_1 + sx_2)r\in\emph{M}$ so we have
+that $r\in\emph{M}$ is a submodule of $\emph{M}$.\\
+\\
+Considering $\emph{M}r$, since $\emph{M}$ is a module, we know that $0\in\emph{M}$ 
+and by the properties of 
+the action of the ring $\emph{R}$ on the module $\emph{M}$, we know that 
+$\forall{r}\in\emph{R}$, 
+$r0 = 0$ and 
+so $0\in\emph{M}r$
+i.e $\emph{M}\ne\emptyset$. Now choose $x_1, x_2\in\emph{M}r$ and choose $s\in\emph{R}$. 
+We want to show that 
+$x_1 + sx_2\in\emph{M}r$. We know that $x_1 + sx_2\in\emph{M}$ since $\emph{M}$ is a module
+$r(x_1 + sx_2) = r(x_1) + r(sx_2) = r(x_1) + rs(x_2) = 0 + s(rx_2) = 0 + 0 = 0$ 
+since $ x_1, x_2\in\emph{M}r$ and 
+$\emph{R}$ is a commutative ring. so we have that
+$x_1 + sx_2\in\emph{M}r$ Hence $\emph{M}r$ is a  submodule of $\emph{M}$\\
+(b)Let 
+$\emph{R} = \mathbb{Z}, \emph{M} = \mathbb{Z}/\emph{n}\mathbb{Z}, \emph{n} = rs$
+where $ra + sb = 1$ 
+where $r\emph{M} = \emph{M}s$ 
+i.e $\{rx : x\in\mathbb{Z}/\emph{n}\mathbb{Z}\} = \{x\in\mathbb{Z}/\emph{n}\mathbb{Z}: sx = 0\}$
+\\
+in other words $\forall{rx}\in{r}\emph{M}, s(rx) = O_m$ 
+consider $rx\in{r}\emph{M}, rx\in\mathbb{Z}rs$
+$s(rx) = sr(x)$ which is an $x$ multiple of $sr$ in $\mathbb{Z}/\emph{n}\mathbb{Z} = Om$
+thus $r\emph{M}\subseteq\emph{M}s$. consider $y\in\emph{M}s$\\
+we have that $sy = O_m$ then $y = rx, rx\in\mathbb{Z}/\emph{n}\mathbb{Z}$
+\\
+thus $\emph{M}s\subseteq{r}\emph{M}$\\
+Hence $r\emph{M} = \emph{M}s$.
+
+(c) Let $r\in\emph{R}$ be forced and consider the \emph{R}-module endomorphism\\
+$c\sigma_r(m) = r\cdot{m}$.\\
+\begin{itemize}  
+\item ker$(\sigma_r) = \{m\in\emph{M} \vert  rm = 0\}$ which is exactly the definition
+  of $\emph{M}_r$. Thus ker$(\sigma_r) = \emph{M}_r$.\\
+\item $\emph{M}\vert\emph{M}_r =\{x + m_r \vert m_r\in\emph{M}_r\}$\\
+\item $\sigma_r(m\vert{m_r}) = \{r(x+m_r)\vert {m_r}\in\emph{M}_r\}$\\
+  $ = \{rx + rm_r \vert {m_r}\in\emph{M}_r\}$\\
+  $ = \{rx\} = r\emph{M}$
+  \\
+  ker$(\sigma_r) = \{o_m\}\subseteq$, thus $(\sigma_r)$ is a bijection.\\\\
+  \item $(\sigma_r)(m_1 + m_2) = r(m_1 + m_2)$\\
+$= r(x_1 +mr+x_2+mr^2)$\\
+$= r(x_1 +x_2+mr^1+mr^2)$\\
+$= r(x_1 +mr^1)+r(x_2+mr^2)$\\
+$= r(m_1)+r(m_2)$ where $m_1,m_2\in\emph{M}\vert\emph{M}_r$\\
+thus $\sigma$ is a bicycle homomorphism from 
+$\in\emph{M}\vert\emph{M}_r \longrightarrow r\emph{M}$ i.e\\
+$\emph{M}\vert\emph{M}_r\cong r\emph{M}$.
+\end{itemize}
+
+(d) Let $\emph{M} = \emph{M}_1\bigoplus \emph{M}_2$ show that 
+$r\emph{M} = r\emph{M}_1\bigoplus r\emph{M}_1$ and 
+$\emph{M}_r = (\emph{M}_1)_r \bigoplus (\emph{M}_2)_r$ 
+\\
+Let $\emph{M} =  \emph{M}_1\bigoplus \emph{M}_2$ we know that $\emph{M}_1 \cap \emph{M}_2 = \{0\}$
+and $\forall x \in \emph{M}, \exists, x_1, x_2 \in \emph{M}_1. \emph{M}_2$ respectively such that
+$x = x_1+x_2$ thus 
+$\forall rx\in r\emph{M}, rx = r(x_1 + x_2) = rx_1 + rx_2$ i.e 
+$r\emph{M} \subseteq r\emph{M}_1 \bigoplus r\emph{M}_2$. Conversely suppose we have 
+$rx_1+rx_2\in r\emph{M}_1 \bigoplus r\emph{M}_2$.\\
+$rx_1 + rx_2 = r(x_1 + x_2)$\\$=r(x)$(since 
+$\emph{M} = \emph{M}_1 \bigoplus \emph{M}_2$)\\Thus 
+$r\emph{M}_1 \bigoplus r\emph{M}_2 \subseteq r\emph{M}$
+\\
+since $\emph{M} = \emph{M}_1 \bigoplus \emph{M}_2$\\
+$\forall x \in\emph{M}_r \exists ! x_1, X_2 \in\emph{M}_1,\emph{M}_2 : x=x_1+x_2$\\
+thus we know that $rx=r(x_1+x_2)$\\
+$O=r(x_1+x_2)$.Since $\emph{M}_r$ is a submodule, we have 
+$x=x_1+x_2\in\emph{M}_r\Leftrightarrow x_1,x_2\in\emph{M}_r$\\
+Thus $rx_1, rx_2 = O$. Hence $\emph{M}_r =\emph{M}_1r + \emph{M}_2r $
+\\\\
+2. Let $\emph{R}$ be a ring\\
+(a) Let $\emph{M}$ be an $\emph{R}$-module. Suppose $\emph{I}$ 
+is a two sided Ideal of $\emph{R}$ with
+the property that $\emph{I}\emph{M} = 0$. We want to show that the rule 
+$$\bar{r} * m = rm + \emph{I}m$$\\
+\\
+gives a well defined action of $\emph{R}/\emph{I}$ on $\emph{M}$\\
+We see that * : $\emph{R}/\emph{I}$ x $\emph{M}\longrightarrow\emph{M}$. 
+Also, suppose that $\bar{r}_1 = \bar{r}_2$ and that $m_1 = m_2$ we want to show that 
+$\bar{r}_1 * m_1 = \bar{r}_2 * m_2$\\
+$\bar{r}_1 * m_1 = r_1m_1 + \emph{I}m_1 = r_1m_1 + 0 = r_1m_1$ 
+but we know that $\bar{r}_1 = \bar{r}_2$ and 
+$m_1 = m_2$ so 
+$r_1m_1 = r_2m_2 = r_2m_2 + 0 = r_2m_2 + \emph{I}m_2 = \bar{r}_2 * m_2$\\
+i.e. $\bar{r}_1 * m_2$. Hence we have that $*$ gives a well defined action of $\emph{R}/\emph{I}$ on
+ $\emph{M}$.\\
+We want to show that $\emph{M}$ is an $\emph{R}/\emph{I}$-module with the ring action $*$\\
+We know that $\emph{M}$ is an $\emph{R}$-module and so ($\emph{M}$, $+$) is an abelian group.\\
+We now show that the rest of the axioms of a module are satisfied.\\
+Let  $\bar{r}_1, \bar{r}_2\in\emph{R}/\emph{I}$ and $m_1, m_2\in\emph{M}$\\
+\\
+
+\begin{itemize}
+    \item $(\bar{r}_1 + \bar{r}_2) * m_1 = (r_1 + r_2)m_1 + \emph{I}m_1$\\
+    $= r_1m_1 + r_2m_1 + \emph{I}m_1$\\
+    $= r_1m_1 + \emph{I}m_1 + r_2m_1 + \emph{I}m_1$\\
+    $= (\bar{r}_1 * m_1) + (\bar{r}_2 * m_1)$\\
+
+    \item $(\bar{r}_1 \bar{r}_2) * m_1 = (\bar{r}_1 \bar{r}_2)m_1 + \emph{I}m_1$\\
+    $= r_1(r_1m_1)+\emph{I}m_1$\\
+    $= r_1((r_2m_1)+\emph{I}m_1) +\emph{I}m_1$\\
+    $= \bar{r}_1 * (\bar{r}_1 * m_1)$\\
+
+    \item $\bar{r}_1  * (m_1 + m_2) = r_1(m_1 + m_2) + \emph{I}(m_1 + m_2)$\\
+    $= r_1m_1n + r_1m_2 + \emph{I}m_1 + \emph{I}m_2$\\
+    $= r_1m_1n + \emph{I}m_1 + r_1m_2 + \emph{I}m_2$\\
+    $= (\bar{r}_1 * m_1) + (\bar{r}_1 * m_2)$\\
+\end{itemize}
+
+Hence we have that $\emph{M}$ is an $\emph{R}/\emph{I}$ - module with the ring action $*$\\
+(b)We want to show that every simple left $\emph{R}$-module 
+is a cyclic left left $\emph{R}$-module\\
+Let $\emph{M}$ be a simple module. Then, the only submodules of $\emph{M}$
+ are the 0 submodule and $\emph{M}$\\
+itself. Suppose also that $\emph{M}$ is not cyclic, that is $\emph{M}$ 
+is not generated by each non zero element in $\emph{M}$
+will be a submodule of $\emph{M}$ but this contradicts our assumption that the $\emph{M}$ is simple.
+ Hence $\emph{M}$ must be generated by at least one of its 
+elements and so $\emph{M}$ is cyclic.\\
+(c)Consider $f:\emph{M}\to\emph{N}$ an \emph{R}-module homomorphism\\
+$ker(\emph{f}) = \{m\in\emph{M}:f(m)=O_N\}$\\
+$f(O_m)=O_N$ thus $O_m\in ker(f)$ and $m+rm_2\forall r\in\emph{R}$.\\
+$f(m_1+m_2)=f(m_1)+rf(m_2)$\\
+$O_N +O_N$
+$=O_N$\\
+Thus $m_1 + rm_2\in ker(f)$ and the submodule criterion is satisfied.\\
+$lm(f)= \{n\in \emph{N}\vert\exists m\in\emph{M}, f(m)=n\}$\\
+$O_N\in lm(f)$ since $f(O_m)=O_N$.Thus $lm(f)$ is not empty. Consider  $n_1,n_2\in lm(f).$
+and $n_1 +n_2 \forall r\in\emph{R}$.\\
+$f(m_1) +rf(m_2) = f(m)+f(rm_2) =f(m_1+m_2) = f(m_3)$\\
+Thus $\exists m_3 = m_1+rm_2:f(m_3) =n_1+m_2$\\
+$x n_1+rn_2\in lm(f)$ and the submodule criterion is satisfied.\\
+\\
+(d) Assume \emph{M} and \emph{N} are cyclic simple then\\
+$ker(f) =\{O_m\}, \emph{M}$\\
+$lm(f) = \{O_N\}, \emph{N}$.\\\\
+if $ker(f) = \{O_m\}$ and $lm(f) = \{O_N\}$ \emph{f} is an isomorphism. 
+if $ker(f) = \{O_m\}$ and $lm(f) = \emph{N}$ \emph{f} is an isomorph.\\
+if $ker(f) = \emph{M}$ and $lm(f) = \{O_N\}$, \emph{f} is the zero map.\\
+if $ker(f) = \emph{M}$ and $lm(f) = \emph{N}$ then \emph{f} is both injective and surjective so
+\emph{f} is an isomorphism.
+\\
+\\
+\\
+\\
+\\
+\\
+3.Suppose $\emph{M}$ is a finite abelian group. We know that then $\emph{M}$ 
+is naturally a $\mathbb{Z}$-module.\\
+\\
+\underline{Claim}:\\
+This action cannot be extended to make $\emph{M}$ into a $\mathbb{Q}$-module
+\\
+\\
+\underline{Proof}:\\
+Given any two unitary rings $\emph{M}$, $\mathbb{S}$ and an $\emph{R}$-module $\emph{M}$. If $\exists$
+ a homomorphism $\emph{f}: \emph{S}\longrightarrow\emph{R}$ then \emph{M} is also an 
+\emph{M}-module with the actionof \emph{S} on \emph{M} defined by 
+$(\emph{s}, \emph{m})\longrightarrow\emph{f}\emph{m}$
+for $\emph{s}\in\emph{S}$, $\emph{m}\in\emph{M}$.\\
+But no such homomorphism exists for $\emph{S} = \mathbb{Q}$ and $\emph{R} = \mathbb{Z}$. 
+Hence the action of $\mathbb{Z}$ on \emph{M} 
+cannot be extended to make \emph{M} into a $\mathbb{Q}$-module.\\
+\\
+\\
+
+4. Suppose that A $\le$ B, then a $\in$ A such that a $\in$ B and b $\in$ B (Since A $\subseteq$ B).\\
+\begin{equation}
+  Let\ A + C = B + C,\ then\ a + c \in A + C\ and\ b + c \in B + C\ for\ a\ \in A,\ b\ \in B\ and\ c \in C
+\end{equation}
+\begin{equation}Let\ A \cap C = B \cap C,\ then\ a = c\ for\ some\ a \in A\ and\ c \in C\ and\ b = c\ for\ some\ b \in B and\ c \in C.
+\end{equation}
+Note that A $\subseteq$ A + C and C $\subseteq$ A + C  ;\\B $\subseteq$ B + C and C $\subseteq$ B + C\\
+so we have that A $\cap$ C $\subseteq$ A + C and B $\cap$ C $\subseteq$ B + C.\\
+That is we have that a $\in$ A $\cap$ C $\subseteq$ A + C and b $\in$ B $\cap$ C $\subseteq$ B + C.\\
+Hence from (2) and (3), we have that \\ 
+a = b.\\
+Also, from (2) and (3), we have that A $\cap$ C $\subseteq$ B $\cap$ C since A $\le$ B.\\ 
+Thus a $\in$ A $\cap$ C such that a $\in$ B $\cap$ C.\\
+So we can write that b = c = a\\
+$\implies$ b = a.\\
+therefore $A = B$.
+
+
+-
+
+\end{document}
